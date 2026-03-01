@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Camera view prompt — Qwen-Image-Edit LoRA</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header role="banner">
+    <h1>Camera view prompt — Qwen-Image-Edit LoRA</h1>
+    <p class="subtitle">Move the camera around the cube to generate the prompt.</p>
+  </header>
+
+  <main role="main">
+    <section class="globe-section" aria-label="3D scene view">
+      <div id="canvas-container"></div>
+      <p class="axis-legend">Reference: <span class="axis-x">X red</span> • <span class="axis-y">Y green (up)</span> • <span class="axis-z">Z blue (front)</span> — Front = +Z, Back = −Z, Right = +X, Left = −X</p>
+    </section>
+
+    <section class="controls-section" aria-label="Settings and prompt">
+      <div class="reference-toggle">
+        <label>
+          <input type="checkbox" id="toggle-references" checked aria-describedby="ref-desc" />
+          Show guides (grid, wireframe)
+        </label>
+        <span id="ref-desc" class="ref-desc">X Y Z axes stay visible. Uncheck to hide grid and wireframe.</span>
+      </div>
+      <div class="distance-control">
+        <span class="label">Distance:</span>
+        <div class="distance-buttons" role="group" aria-label="Shot distance">
+          <button type="button" data-distance="close-up" aria-pressed="false">Close-up</button>
+          <button type="button" data-distance="medium shot" aria-pressed="true">Medium shot</button>
+          <button type="button" data-distance="wide shot" aria-pressed="false">Wide shot</button>
+        </div>
+      </div>
+
+      <div class="prompt-output">
+        <label for="prompt-text">Generated prompt</label>
+        <div class="prompt-row">
+          <output id="prompt-text" for="prompt-text" role="status" aria-live="polite"></output>
+          <button type="button" id="copy-btn" aria-label="Copy prompt to clipboard">Copy</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="credits">
+    <p>Camera prompts based on <a href="https://huggingface.co/fal/Qwen-Image-Edit-2511-Multiple-Angles-LoRA" target="_blank" rel="noopener noreferrer">fal/Qwen-Image-Edit-2511-Multiple-Angles-LoRA</a> (Hugging Face).</p>
+  </footer>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "./vendor/three.module.js"
+    }
+  }
+  </script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

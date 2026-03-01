@@ -1,0 +1,27 @@
+# Git
+.git
+.gitignore
+
+# IDE / editor
+.cursor
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Docs (optional: remove if you want them in the image)
+*.md
+!README.md
+
+# Misc
+node_modules
+.env
+.env.*
