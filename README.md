@@ -34,3 +34,7 @@ Camera prompts follow the format from [fal/Qwen-Image-Edit-2511-Multiple-Angles-
 ## License
 
 MIT
+
+---
+
+**Sponsored by [NextHeberg](https://nextheberg.com)**
